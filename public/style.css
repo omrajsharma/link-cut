@@ -1,0 +1,24 @@
+.container-center {
+    max-width: 600px;
+    margin: auto;
+  }
+  .head{
+    display:block
+  }
+  .image {
+    margin: auto;
+    display: auto;
+    max-width: 350px;
+    border-radius: 0.5rem;
+    width: 100%;
+    margin-top: 3rem;
+  }
+  
+  h1 {
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  p {
+    font-size: larger;
+  }
+  

@@ -1,12 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require("path");
 
 /**
  * APP
  */
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname,'public')))
 
 
 /**
@@ -95,7 +97,7 @@ app.get('/:shortStr', async (req, res) => {
     const shortStrDoc = await LinkModel.find({shortStr: shortStr});
 
     if (shortStrDoc.length === 0) {
-        res.status(401).end('link do not exists')
+        res.status(404).sendFile(path.join(__dirname, "view", "index.html"));
         return;
     }
 
